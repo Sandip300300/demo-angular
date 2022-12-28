@@ -1,0 +1,27 @@
+<div class="container" >
+
+  <div *ngIf="searchResult" >
+    <div class="row search-item" style="margin-top: 25px;" *ngFor="let item of searchResult">
+      <div class="col-md-3">
+        <a routerLink="/details/{{item.id}}">
+        <img src="{{item.image}}" alt="">
+      </a>
+      </div>
+      <div class="col-md-8 ">
+        <a routerLink="/details/{{item.id}}">
+        <h6 style="font-size: 24px; color: blueviolet;">{{item.name}}</h6></a>
+        <p><b>Price:{{item.price}}</b></p>
+        <p><span>Color:{{item.color}}</span><span>Category : {{item.category}}</span></p>
+        <p>{{item.description}}</p>
+
+      </div>
+      <hr style="margin-top: 10px;">
+    </div>
+  </div>
+
+
+
+
+</div>
+
+

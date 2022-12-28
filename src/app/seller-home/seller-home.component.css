@@ -1,0 +1,22 @@
+table{
+  text-align: left;
+  color: blueviolet;
+  border-collapse: collapse;
+  width: 100%;
+}
+table td,table th{
+  border: 1px solid blueviolet;
+  padding: 10px;
+  min-height: 160px;
+}
+img{
+  height: 100px;
+  width: 100px;
+}
+.meessage-p{
+  color: red;
+  text-align: center;
+}
+.updateLink{
+  margin-left: 10px;
+}

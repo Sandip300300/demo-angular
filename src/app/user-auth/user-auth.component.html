@@ -1,0 +1,26 @@
+<div class="user-auth">
+
+  <form *ngIf="!IsLoggedIn" #userSignUp="ngForm" class="common-form" (ngSubmit)="singUp(userSignUp.value)">
+    <h1>User Sign Up</h1>
+    <input type="text" name="email" class="form-input" placeholder="Enter User Email" ngModel>
+    <input type="text" class="form-input" name="name" placeholder="Enter User Name" ngModel>
+    <input type="password" class="form-input" name="password" placeholder="Enter User Paassword" ngModel>
+    <button>Sign Up</button>
+    <p>Alreday Have Account?<a style="color: blueviolet;
+      cursor: pointer" (click)="openLogIn()">Click Here</a></p>
+  </form>
+  <div class="user-login">
+
+    <form *ngIf="IsLoggedIn" #userSignUp="ngForm" class="common-form" (ngSubmit)="login(userSignUp.value)">
+      <h1>User Log In</h1>
+      <p style="color: red;">{{authError}}</p>
+      <input type="text" name="email" class="form-input" placeholder="Enter User Email" ngModel #email="ngModel" required>
+      <p style="color: red;" *ngIf="email.invalid && email.touched" ><span>Enter Valid Email</span></p>
+      <input type="password" class="form-input" name="password" placeholder="Enter User Paassword" ngModel #password="ngModel" required>
+      <p style="color: red;" *ngIf="password.invalid && password.touched" ><span>Enter Valid Password</span></p>
+      <button [disabled]="userSignUp.invalid">Log In</button>
+      <p>Don't have any account?<a style="color: blueviolet;
+      cursor: pointer" (click)="openSignUp()">Click Here</a></p>
+    </form>
+  </div>
+</div>
